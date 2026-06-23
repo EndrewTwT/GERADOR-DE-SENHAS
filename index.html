@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gerador de Senhas</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🔐 Gerador de Senhas</h1>
+
+    <div class="senha-box">
+        <input type="text" id="senha" readonly>
+        <button id="copiar">Copiar</button>
+    </div>
+
+    <div class="grupo">
+        <label>Tamanho: <span id="valorTamanho">16</span></label>
+        <input type="range" min="4" max="64" value="16" id="tamanho">
+    </div>
+
+    <div class="grupo">
+        <label>
+            Tipo de senha
+        </label>
+
+        <select id="tipo">
+            <option value="completa">Letras + Números + Símbolos</option>
+            <option value="letras">Somente Letras</option>
+            <option value="numeros">Somente Números (PIN)</option>
+            <option value="alfa">Letras + Números</option>
+            <option value="semletras">Sem Letras</option>
+        </select>
+    </div>
+
+    <div class="grupo">
+        <label>
+            <input type="checkbox" id="ambigua">
+            Remover caracteres parecidos (0,O,1,l,I)
+        </label>
+    </div>
+
+    <button class="gerar" id="gerar">
+        Gerar Senha
+    </button>
+
+    <div class="forca">
+        <h3>Nível de Segurança</h3>
+
+        <div class="barra">
+            <div id="progresso"></div>
+        </div>
+
+        <p id="nivel">-</p>
+    </div>
+
+    <div class="historico">
+        <h3>Últimas Senhas</h3>
+        <ul id="listaHistorico"></ul>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
